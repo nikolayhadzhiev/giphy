@@ -1,0 +1,905 @@
+/* Main styling */
+html,
+body {
+  margin: 0;
+}
+
+body {
+  background: url('../images/wallhaven-483k3k.jpg') repeat;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+div#app {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    'menu menu menu'
+    'container container container'
+    'footer footer footer';
+  min-height: 100vh;
+}
+
+#container #trending-gifs {
+  grid-area: container;
+  padding: auto;
+  color: white;
+  max-width: 1728px;
+  margin: 0 auto;
+}
+
+#container #search-gifs {
+  grid-area: container;
+  padding: auto;
+  color: white;
+  max-width: 1728px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+/* Add Animation to content */
+.gif {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 1s;
+  animation-name: zoom;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* Add Animation to content end */
+/* Main styling end*/
+
+/* Navigation bar styling */
+nav {
+  grid-area: menu;
+  height: 60px;
+  background-color: black;
+  font-size: 1.75em;
+  line-height: 60px;
+  padding: 20px;
+  color: white;
+  display: flex;
+}
+
+nav img {
+  height: 50px;
+}
+
+nav a {
+  color: rgb(198, 115, 247);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+a.active {
+  color: white;
+  font-weight: bold;
+  /* text-decoration: underline; */
+}
+
+/* Search bar and button styling */
+input#search {
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+  border-radius: 4px;
+  height: 45px;
+  flex: 1 0;
+  margin: auto;
+  margin-left: 15px;
+  margin-right: 25px;
+  padding-left: 15px;
+  max-width: 50%;
+}
+
+input#search::placeholder {
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+input#search:focus {
+  font-size: 20px;
+  padding-left: 15px;
+  letter-spacing: 1px;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+input[type='search']::-webkit-search-cancel-button:hover {
+  transform: scale(1.2);
+}
+
+#btnSearch {
+  position: relative;
+  background: linear-gradient(
+    120deg,
+    rgb(57, 31, 105) -2.3%,
+    rgb(115, 43, 155) 44.4%,
+    rgb(231, 75, 184) 103.4%
+  );
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  width: 150px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  height: 50px;
+  margin: 5px 5px 0 0;
+}
+
+#btnSearch:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+#btnSearch:after {
+  content: '';
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+#btnSearch:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+/* Search bar and button styling end */
+/* Navigation bar styling end */
+
+/* Favorite GIFs styling */
+#favorites-container {
+  margin: 50px auto;
+}
+
+/* Random gif styling */
+div.random {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.random h1 {
+  margin: 0;
+}
+
+div.random p {
+  margin-top: 0;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+div.random img {
+  height: 300px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+div.random img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+/* Random gif styling end */
+
+/* Button to get another random gif styling */
+#generate-random-gif-btn {
+  position: relative;
+  background: linear-gradient(
+    120deg,
+    rgb(57, 31, 105) -2.3%,
+    rgb(115, 43, 155) 44.4%,
+    rgb(231, 75, 184) 103.4%
+  );
+  border: none;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  width: 160px;
+  padding: auto 20px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  height: 50px;
+  margin: 45px 5px 0 5px;
+}
+
+#generate-random-gif-btn:hover {
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
+}
+
+#generate-random-gif-btn:after {
+  content: '';
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+#generate-random-gif-btn:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 50%;
+  transition: 0s;
+}
+/* Favorites page button to get another random gif styling */
+
+#gif-info-div {
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+  flex-wrap: wrap;
+}
+
+/* Favorite icon*/
+#favorite-div {
+  display: flex;
+  align-items: center;
+  margin-top: -10px;
+}
+
+#favorite-div p {
+  color: #ccc;
+  margin-top: 35px;
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+span.favorite {
+  cursor: pointer;
+  color: white;
+  font-size: 25px;
+}
+
+span.favorite.active {
+  color: rgb(255, 0, 149);
+  font-size: 35px;
+}
+
+span.favorite:hover {
+  color: rgb(255, 0, 149);
+  font-size: 35px;
+}
+/* Favorite icon end*/
+
+/* Copy link icon*/
+#copy-link-div {
+  display: flex;
+  align-items: center;
+  margin-top: -10px;
+}
+
+#copy-link-div p {
+  color: #ccc;
+  margin-top: 35px;
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+span#copy-link-icon {
+  cursor: pointer;
+  color: white;
+  font-size: 25px;
+}
+
+span#copy-link:hover {
+  background-color: rgb(255, 0, 149);
+  border-radius: 10px;
+}
+
+span#copy-link-icon.active {
+  font-size: 35px;
+}
+
+span#copy-link-icon:hover {
+  font-size: 35px;
+}
+/* Copy link icon end*/
+
+/* Alert message for successfully copied link & added/removed GIF to/from Favorites */
+#notification-div {
+  background-color: rgb(81, 209, 120);
+  color: rgb(16, 14, 14);
+  text-align: center;
+  padding: 5px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#notification-div.active {
+  opacity: 1;
+}
+
+#notification-div p {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+/* Alert message for successfully copied link & added/removed GIF to/from Favorites end */
+
+/* Add Animation to favorites page */
+#favorites-container {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 1.5s;
+  animation-name: zoom;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* Add Animation to favorites page end */
+/* Favorite GIFs styling end */
+
+/* GIFs styling */
+#trending-gifs p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+#trending-gifs div.trending-content {
+  font-size: 1.25em;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#favorite-gifs h1 {
+  color: white;
+  text-align: center;
+  margin: 20px auto;
+}
+
+#favorite-gifs p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+#favorite-gifs div.favorites-content {
+  font-size: 1.25em;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#search-gifs h1 {
+  color: white;
+  text-align: center;
+  margin: 20px auto;
+}
+
+#search-gifs p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+#search-gifs div.search-content {
+  font-size: 1.25em;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+#uploads-gifs p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+#uploads-gifs div.uploads-content {
+  font-size: 1.25em;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div.gif {
+  height: 255px;
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+div.gif h1 {
+  color: white;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+div.gif h2 {
+  font-size: 1.25em;
+  margin: 5px;
+}
+
+div.gif img {
+  height: 255px;
+  width: 300px;
+  /* object-fit: contain; */
+  cursor: pointer;
+}
+
+div.gif img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  opacity: 80%;
+}
+
+/* Details GIF view styling */
+/* Details view gif container styling */
+#modal-container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Details view gif author */
+div#author {
+  margin-top: -30px;
+}
+
+/* Details view gif img */
+#img01 {
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+/* Gif details modal */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-height: 480px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  margin-bottom: 25px;
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  color: white;
+  padding-bottom: 5px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Add Animation */
+.modal-content,
+#caption,
+#gif-info-div {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 1s;
+  animation-name: zoom;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: blueviolet;
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 50%;
+  }
+}
+/* Details GIF view styling end */
+/* GIFs styling end */
+
+/* About styles */
+#about {
+  padding: 30px;
+}
+
+#about h1 {
+  color: rgb(187, 135, 255);
+  margin-bottom: 30px;
+}
+
+#about h2 {
+  color: rgb(229, 210, 255);
+}
+
+.about-content h1 {
+  margin-top: auto;
+}
+
+.description {
+  margin-bottom: 50px;
+}
+
+footer {
+  grid-area: footer;
+  padding: 10px;
+  text-align: center;
+  color: #ccc;
+}
+
+/* Add Animation to about page */
+#about {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 1.5s;
+  animation-name: zoom;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* Add Animation to about page end */
+/* About styles end */
+
+/* To top button styling */
+.back-to-top-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  color: white;
+}
+
+#to-top-btn {
+  position: fixed;
+  right: 2rem;
+  bottom: 1.5rem;
+  border-radius: 10%;
+  background: linear-gradient(
+    120deg,
+    rgb(57, 31, 105) -2.3%,
+    rgb(115, 43, 155) 44.4%,
+    rgb(231, 75, 184) 103.4%
+  );
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  opacity: 0%;
+  transition: opacity 1 ease-in-out;
+}
+
+#to-top-btn:hover {
+  transform: scale(1.1);
+  transition: transform 0.3 ease-in;
+}
+/* To top button styling end */
+
+/* Upload gifs styling */
+.drop-zone {
+  max-width: 250px;
+  height: 250px;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+  color: #cccccc;
+  border: 4px dashed rgb(198, 115, 247);
+  border-radius: 10px;
+}
+
+span.drop-zone__prompt {
+  line-height: 2;
+  letter-spacing: 2px;
+}
+
+.drop-zone--over {
+  border-style: solid;
+}
+
+.drop-zone__input {
+  display: none;
+}
+
+.drop-zone__thumb {
+  display: flex;
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.drop-zone__thumb:hover img,
+gif {
+  transform: scale(0.5);
+  transition: transform 0.3s ease-in;
+}
+
+.drop-zone__thumb:not(:hover) img,
+gif {
+  transition: transform 0.5s ease-out;
+}
+
+.drop-zone__thumb img,
+gif {
+  border-radius: 10px;
+}
+
+.drop-zone__thumb::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 14px;
+  text-align: center;
+}
+
+button#submit {
+  position: relative;
+  background: linear-gradient(
+    120deg,
+    rgb(57, 31, 105) -2.3%,
+    rgb(115, 43, 155) 44.4%,
+    rgb(231, 75, 184) 103.4%
+  );
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  width: 150px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  height: 50px;
+  margin: 5px 5px 0 0;
+}
+
+button#submit:hover {
+  transform: scale(1.15);
+}
+
+button#submit:after {
+  content: '';
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+button#submit:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+#container > div.drop-zone {
+  margin: 40px auto auto auto;
+}
+
+hr {
+  background-color: rgb(198, 115, 247);
+  height: 1px;
+  border: none;
+  width: 100%;
+}
+
+.submit_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.loading-gif {
+  height: 50px;
+  width: 50px;
+}
+
+/* Add Animation to uploads */
+.drop-zone,
+hr,
+p {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 1s;
+  animation-name: zoom;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* Add Animation to uploads end */
+/* Upload gifs styling end */
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+  height: 500px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 6px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIPHY - Team 10</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="../template/images/giphy-logo-1.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <header></header>
+      <nav>
+        <a href="#" class="nav-link" data-page="trending"
+          ><img
+            src="./images/Giphy-Logo.png"
+            alt="Giphy-Logo"
+            class="nav-link"
+            data-page="trending"
+        /></a>
+        <a href="#" class="nav-link" data-page="trending">Trending</a> |
+        <a href="#" class="nav-link" data-page="favorites">Favorites</a> |
+        <a href="#" class="nav-link" data-page="uploads">Uploads</a> |
+        <a href="#" class="nav-link" data-page="about">About</a>
+        <input id="search" type="search" placeholder="Looking for a GIF?" />
+        <button id="btnSearch">Search</button>
+      </nav>
+      <div id="container">
+        <!-- start placeholders -->
+
+        <!-- end placeholders -->
+
+        <!-- <footer>Footer</footer> -->
+      </div>
+      <button id="to-top-btn" title="Go to top">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="back-to-top-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 11l5-5m0 0l5 5m-5-5v12"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- app -->
+    <script src="./src/index.js" type="module"></script>
+    <!-- end app -->
+  </body>
+</html>
