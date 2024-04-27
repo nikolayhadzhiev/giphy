@@ -1,4 +1,4 @@
-import {q} from '../helpers/helpers.js';
+import { q } from '../helpers/helpers.js';
 
 /**
  * Displays the "To Top" button when the user scrolls
@@ -12,7 +12,7 @@ export const displayToTopButton = () => {
 
   // When the user scrolls down 100px
   // from the top of the document, show the button
-  window.onscroll = function() {
+  window.onscroll = function () {
     scrollFunction();
   };
 

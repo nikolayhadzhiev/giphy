@@ -1,8 +1,12 @@
 /* eslint-disable max-len */
-import {q} from '../helpers/helpers.js';
+import { q } from '../helpers/helpers.js';
 
 let notificationActive = false;
 
+/**
+ * Displays a notification when adding a GIF to favorites.
+ * @author Nikolay Hadzhiev
+ */
 export const addToFavoritesNotification = () => {
   const favHeart = q('.favorite');
   const modalContent = q('#myModal');

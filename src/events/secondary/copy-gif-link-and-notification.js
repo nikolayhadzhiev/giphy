@@ -1,7 +1,11 @@
-import {q} from '../helpers/helpers.js';
+import { q } from '../helpers/helpers.js';
 
 let isClicked = false;
 
+/**
+ * Displays a notification when the GIF's link is copied.
+ * @author Nikolay Hadzhiev
+ */
 export const copyGifLinkToClipboard = (gif) => {
   const copyLinkIcon = q('#copy-link-icon');
   const modalContent = q('#myModal');

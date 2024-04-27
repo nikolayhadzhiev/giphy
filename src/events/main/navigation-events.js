@@ -12,16 +12,16 @@ import {
   loadSelectedGif,
   loadTrendingGifs,
 } from '../../requests/request-service.js';
-import {toAboutView} from '../../views/about-view.js';
-import {toFavoritesView} from '../../views/favorites-view.js';
-import {toTrendingView} from '../../views/trending-view.js';
-import {toUploadView} from '../../views/upload-view.js';
-import {q, setActiveNav} from '../helpers/helpers.js';
-import {getFavorites} from '../../data/favorites.js';
-import {drop, submit} from './upload-events.js';
-import {displayGifDetails} from './display-gif-details.js';
-import {displayRandomGif} from '../../views/favorites-view.js';
-import {getUploaded} from '../../data/uploaded.js';
+import { toAboutView } from '../../views/about-view.js';
+import { toFavoritesView } from '../../views/favorites-view.js';
+import { toTrendingView } from '../../views/trending-view.js';
+import { toUploadView } from '../../views/upload-view.js';
+import { q, setActiveNav } from '../helpers/helpers.js';
+import { getFavorites } from '../../data/favorites.js';
+import { drop, submit } from './upload-events.js';
+import { displayGifDetails } from './display-gif-details.js';
+import { displayRandomGif } from '../../views/favorites-view.js';
+import { getUploaded } from '../../data/uploaded.js';
 
 // public API
 /**
@@ -53,6 +53,10 @@ export const loadPage = async (page = '') => {
   }
 };
 
+/**
+ * Display GIFs details.
+ * @author Nikolay Hadzhiev
+ */
 export const renderGifDetails = async (id = null) => {
   try {
     const singleGif = await loadSelectedGif(id);
@@ -62,8 +66,11 @@ export const renderGifDetails = async (id = null) => {
   }
 };
 
+/**
+ * Display trending GIFs with infinite scroll.
+ * @author Nikolay Hadzhiev
+ */
 // private functions
-
 const renderTrending = async () => {
   try {
     const currentPage = q('.nav-link.active').getAttribute('data-page');

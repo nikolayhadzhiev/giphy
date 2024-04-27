@@ -13,7 +13,7 @@ import { EMPTY_HEART, FULL_HEART } from '../../common/constants.js';
  * If the GIF is already in favorites, it removes it; otherwise, it adds it.
  *
  * @param {string} gifId The ID of the GIF to toggle the favorite status.
- * @author Diana Alemkova
+ * @author Nikolay Hadzhiev
  */
 export const toggleFavoriteStatus = (gifId) => {
   const favorites = getFavorites();
@@ -37,8 +37,8 @@ export const renderFavoriteStatus = (gifId) => {
 
 /**
  * Loads and displays another random GIF by updating the image source,
- *  ID, and alt attribute of the current GIF.
- * @author Diana Alemkova
+ * ID, and alt attribute of the current GIF.
+ * @author Nikolay Hadzhiev
  */
 export const getAnotherRandomGif = async () => {
   const getNewGif = await loadRandomGif();

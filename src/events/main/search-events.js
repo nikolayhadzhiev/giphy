@@ -1,16 +1,19 @@
 /* eslint-disable max-len */
-import {CONTAINER_SELECTOR} from '../../common/constants.js';
-import {loadSearchGifs} from '../../requests/request-service.js';
-import {toSearchView} from '../../views/search-view.js';
-import {q, qs} from '../helpers/helpers.js';
+import { CONTAINER_SELECTOR } from '../../common/constants.js';
+import { loadSearchGifs } from '../../requests/request-service.js';
+import { toSearchView } from '../../views/search-view.js';
+import { q, qs } from '../helpers/helpers.js';
 
+/**
+ * Display searched GIFs.
+ * @author Nikolay Hadzhiev
+ */
 export const renderSearchGifs = async (searchTerm) => {
   try {
     const searchedGifs = await loadSearchGifs(searchTerm);
     q(CONTAINER_SELECTOR).innerHTML = toSearchView(searchedGifs, searchTerm);
   } catch (e) {
-    console.log(e.mess,
-    );
+    console.log(e.mess);
   }
 };
 

@@ -1,13 +1,13 @@
 /* eslint-disable max-len */
-import {q} from '../helpers/helpers.js';
-import {renderFavoriteStatus} from './favorites-events.js';
-import {copyGifLinkToClipboard} from '../secondary/copy-gif-link-and-notification.js';
+import { q } from '../helpers/helpers.js';
+import { renderFavoriteStatus } from './favorites-events.js';
+import { copyGifLinkToClipboard } from '../secondary/copy-gif-link-and-notification.js';
 
 /**
  * Displays the details of a GIF in a modal.
  *
  * @param {object} gif The GIF object containing properties like images
- * @author Diana Alemkova
+ * @author Nikolay Hadzhiev
  */
 export const displayGifDetails = (gif) => {
   const modal = q('#myModal');
@@ -32,7 +32,7 @@ export const displayGifDetails = (gif) => {
 
 /**
  * Closes the modal displaying the GIF details.
- * @author Diana Alemkova
+ * @author Nikolay Hadzhiev
  */
 export const closeGifDetails = () => {
   const modal = q('#myModal');
